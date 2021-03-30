@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <title>MVP NBA21</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    </head>
+
+    <body>
+
+      <!--NAVIGATION BAR-->
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid d-flex justify-content-center">
+            <a class="navbar-brand" href="#"><img src="imagenes/nba.jpg" class="img-fluid" width="100px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExample03"> <!--Cuando se colapse el navbar esto ira dentro-->
+                <ul class="navbar-nav me-auto my-2">
+                  <li class="nav-item active">
+                    <a class="nav-link" aria-current="page" href="principal.html" >Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://www.basketball-reference.com/" target="_blank">References</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://www.nba.com/standings" target="_blank">Standings</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Teams</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown03">
+                      <li><a class="dropdown-item" href="https://www.nba.com/teams" target="_blank">Eastern Conference</a></li>
+                      <li><a class="dropdown-item" href="https://www.nba.com/teams" target="_blank">Western Conference</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="shop.html">Shop</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="aboutUs.html">About Us</a>
+                  </li>
+                </ul>
+                
+                <div class="d-flex">
+                  <form class="container-fluid d-flex justify-content-end" id="submitLogin">
+                    <div class="container-fluid align-items-center">
+                      <a href="logIn.html"><button" class="btn btn-danger my-2" data-bs-toggle="modal" data-bs-target="#loginmodal" style="min-width: 100px;">LOG IN</button></a>
+
+                    </div>
+                  </form>
+                  <form class="container-fluid d-flex justify-content-center" id="submitSignUp">
+                    <div class="container-fluid align-items-center">
+                      <a href="signUp.html"><button type="button" class="btn btn-danger my-2" data-bs-toggle="modal" data-bs-target="#signupmodal" style="min-width: 100px;">SIGN UP</button></a>
+                    </div>
+                  </form>
+                  <form class="d-flex align-items-center justify-content-center">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="min-width: 3cm; max-height: 1cm;" id="searchInput">
+                    <button class="btn btn-outline-success" id="searchBut" type="submit">Search</button>
+                  </form>
+              </div>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!--MAIN-->
+
+    <main>
+
+    <!--CABECERA-->
+
+        <div class="container-fluid bg-secondary">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 my-3">
+                        <p class="h1 text-center" id="textAbovePpal">
+                            BEST FIVE PLAYERS OF THE 20/21 NBA SEASON
+                        </p>
+                    </div>
+                </div>
+              </div>
+              
+              <div class="container-fluid" id="searchDiv">
+                
+              </div>
+
+            <!--CAROUSEL-->
+
+            <div class="row" id ="ppal">
+
+              <div class="container-fluid my-4" style="max-width: 500px;">
+                <div id="carouselImagesPlayers" class="carousel slide" data-bs-ride="carousel" y>
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselImagesPlayers" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselImagesPlayers" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselImagesPlayers" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselImagesPlayers" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselImagesPlayers" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                  </div>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="imagenes/doncic.jpg" class="img img-fluid rounded-circle d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="imagenes/lebron.jpg" class="img img-fluid rounded-circle d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="imagenes/kawhai.jpg" class="img img-fluid rounded-circle d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="imagenes/giannis.jpg" class="img img-fluid rounded-circle d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="imagenes/lilard.jpg" class="img img-fluid rounded-circle d-block w-100" alt="...">
+                    </div>
+                  </div>
+                 </div>
+              </div>
+              
+              <div class="row mb-4">
+  
+                <!--TABLE-->
+  
+                <div class="col-sm my-4">
+                      <div class="container-fluid">
+                          <table class="table bg-light" id="tableInfo">
+                              <thead>
+                                <tr class="table-primary">
+                                  <th scope="col">NAME</th>
+                                  <th scope="col">PPG</th>
+                                  <th scope="col">APG</th>
+                                  <th scope="col">RPG</th>
+                                  <th scope="col">%FG</th>
+                                  <th scope="col">%3PM</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                  <tr class="table-light">
+                                      <th scope="row" class="table-dark">LUKA DONCIC</th>
+                                      <td class="table-warning">27.9</td>
+                                      <td class="table-info">9.5</td>
+                                      <td class="table-warning">8.7</td>
+                                      <td class="table-warning">46.2</td>
+                                      <td class="table-warning">31.7</td>
+                                  </tr>
+                                  <tr>
+                                      <th scope="row" class="table-dark">LEBRON JAMES</th>
+                                      <td class="table-warning">25.5</td>
+                                      <td class="table-warning">7.8</td>
+                                      <td class="table-warning">7.7</td>
+                                      <td class="table-warning">49.7</td>
+                                      <td class="table-info">41.0</td>
+                                  </tr>
+                                  <tr>
+                                      <th scope="row" class="table-dark">KAWHI LEONARD</th>
+                                      <td class="table-warning">26.0</td>
+                                      <td class="table-warning">5.1</td>
+                                      <td class="table-warning">5.8</td>
+                                      <td class="table-warning">50.4</td>
+                                      <td class="table-warning">37.6</td>
+                                  </tr>
+                                  <tr>
+                                      <th scope="row" class="table-dark">GIANNIS ANTETOKOUNMPO</th>
+                                      <td class="table-warning"">27.1</td>
+                                      <td class="table-warning">5.8</td>
+                                      <td class="table-info">11.2</td>
+                                      <td class="table-info">56.1</td>
+                                      <td class="table-warning">28.1</td>
+                                  </tr>
+                                  <tr>
+                                      <th scope="row" class="table-dark">DAMIAN LILLARD</th>
+                                      <td class="table-info">29.1</td>
+                                      <td class="table-warning">7.3</td>
+                                      <td class="table-warning">4.5</td>
+                                      <td class="table-warning">45.7</td>
+                                      <td class="table-warning">38.4</td>
+                                   </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+  
+                 <!--ACCORDION/COLLAPSE-->
+  
+                  <div class="col-sm my-4" style="border-color: black; border-width: 2px;">
+                      <div class="accordion accordion-flush" id="accordionPlayers" style="border-color: black; border-width: 2px; border-style: solid;">
+                          <div class="accordion-item ">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                              <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                  LUKA DONCIC
+                              </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#v">
+                              <div class="accordion-body bg-light">
+                                  <div class="item1 bg">
+                                      <p>NATIONALITY: SLOVENIA <img src="imagenes/eslovenia.svg" class="img-fluid" width="20"></p>
+                                  </div>
+                                  <div class="item1">
+                                      <p>TRACK RECORD 1xALLSTAR / 1xEUROLIGA / 3xACB / 1xMVP EUROLIGA / 1xMVP ACB / 1xMVP FONAL FOUR EUROLIGA <img src="imagenes/medal.jpg" class="img-fluid" width="20"></p>
+                                  </div>                            </div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingTwo">
+                              <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                      LEBRON JAMES
+                              </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionPlayers">
+                              <div class="accordion-body bg-light">
+                                  <div class="item2">
+                                      <p>NATIONALITY: USA <img src="imagenes/usa.svg" class="img-fluid" width="20"></p>
+                                  </div>
+                                  <div class="item2">
+                                      <p>TRACK RECORD: 4xMVP / 4xMVPFINALS / 13xALL-STAR / 4xNBA CHAMPIONSHIPS <img src="imagenes/medal.jpg" class="img-fluid" width="20"></p>
+                                  </div>    
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingThree">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                  KAWHI LEONARD
+                              </button>
+                            </h2>
+                            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionPlayers">
+                              <div class="accordion-body bg-light">
+                                  <div class="item3">
+                                      <p>NATIONALITY: USA <img src="imagenes/usa.svg" class="img-fluid" width="20"></p>
+                                  </div>
+                                  <div class="item3">
+                                      <p>TRACK RECORD: 2xMVPFINALS / 2xDPY / 4xALL-STAR / 2xNBA CHAMPIONSHIPS <img src="imagenes/medal.jpg" class="img-fluid" width="20"></p>
+                                  </div>                            </div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                              <h2 class="accordion-header" id="flush-headingFour">
+                                <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                  GIANNIS ANTETOKOUNMPO
+                                  </button>
+                              </h2>
+                              <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionPlayers">
+                                <div class="accordion-body bg-light">
+                                  <div class="item4">
+                                      <p>NATIONALITY: GREECE <img src="imagenes/greece.svg" class="img-fluid" width="20"></p>
+                                  </div>
+                                  <div class="item4">
+                                      <p>TRACK RECORD: 2xMVP / 1xDPY / 4xALL-STAR <img src="imagenes/medal.jpg" class="img-fluid" width="20"></p>
+                                  </div>                          </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="flush-headingFive">
+                                <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                                  DAMIAN LILLARD
+                                </button>
+                              </h2>
+                              <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionPlayers">
+                                <div class="accordion-body bg-light">
+                                  <div class="item5">
+                                      <p>NATIONALITY: USA <img src="imagenes/usa.svg" class="img-fluid" width="20"></p>
+                                  </div>
+                                  <div class="item5">
+                                      <p>TRACK RECORD: 5xALL-STAR <img src="imagenes/medal.jpg" class="img-fluid" width="20"></p>
+                                  </div>                          </div>
+                              </div>
+                            </div>
+                        </div>
+                  </div>
+              </div>
+  
+              <div class="row mb-4">
+  
+                <!--IFRAMES-->
+  
+                <div class="col-xl-2">
+                  <div class="container-fluid mx-2 ">
+                      <iframe width="200" height="200" src="https://www.youtube.com/embed/ylrFL5ywPs0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="col-xl-2">
+                    <div class="container-fluid mx-2">
+                        <iframe width="200" height="200" src="https://www.youtube.com/embed/EZFxHPB_-fk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-xl-2">
+                    <div class="container-fluid mx-2">
+                        <iframe width="200" height="200" src="https://www.youtube.com/embed/5JWAx19dmbk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    </div>
+                </div>
+                <div class="col-xl-2">
+                    <div class="container-fluid mx-2">
+                        <iframe width="200" height="200" src="https://www.youtube.com/embed/AaL3FUnTiws" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-xl-2">
+                    <div class="container-fluid mx-2">
+                        <iframe width="200" height="200" src="https://www.youtube.com/embed/U1YEB36ZNps" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+  
+                <!--ALERTBUTTON-->
+  
+                <div class="col-sm-2">
+                  <div class="container-fluid my-3">
+                    <button type="button" class="btn btn-primary position-relative" data-bs-toggle="modal" data-bs-target="#modalAlertShop">
+                      Alerts 
+                      <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2">
+                        <span class="visually-hidden">
+                              unread messages
+                            </span>
+                          </span>
+                        </button>
+                        <div class="modal fade" id="modalAlertShop" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                          <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel2">OFFER!!</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                  <p>ALL T-SHIRTS IN OFFER!!</p>
+                                  <a href="shop.html" target="_blank">GO TO SHOP</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+  
+                <!--FORMSELECT+BUTTONVOTE-->
+                  
+                  <div class="row">
+                      <div class="col-sm">
+                          <div class="container-fluid" id="fatherselector">
+                              <div class="container-fluid text-center ">
+                                  <p class="h2">VOTE YOUR FAVOURITE PLAYER</p>
+                              </div>
+                              <div class="container-fluid my-3">
+                                  <select class="form-select" aria-label="Default select example" id="selectorVote">
+                                      <option value="0" selected>SELECT PLAYER</option>
+                                      <option value="1">LUKA DONCIC</option>
+                                      <option value="2">LEBRON JAMES</option>
+                                      <option value="3">KAWHI LEONARD</option>
+                                      <option value="4">GIANNIS ANTETOKOUNMPO</option>
+                                      <option value="5">DAMIAN LILLARD</option>
+                                  </select>
+                              </div>
+                              
+                              <div class="container-fluid align-items-center d-flex justify-content-center my-3">
+                                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="comprobacionesSend()">
+                                  SEND VOTE
+                                </button>
+                                
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">NBA VOTES 2021</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body" id="votesBody">
+                                        <label for="emailVote" id="labelEmail">EMAIL</label>
+                                        <input style="margin-left: 1cm;" type="email" id="emailVote" required>
+                                        <p class="h5 my-3 " id="pSelect">PLEASE, SELECT ONE OPTION</p>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="submit" class="btn btn-secondary" id="botonClose" data-bs-dismiss="modal" hidden>Close</button>
+                                        <button type="submit" class="btn btn-primary" id="botonSend" onclick="restauracion()">SEND VOTE</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>                              
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+              </div>
+          </div>
+    </main>
+        
+    <!--FOOTER-->
+
+    <footer>
+        <div class="container-fluid d-flex justify-content-center">
+          <p class="h5">NBAVOTES 1.0.1</p>
+        </div>
+    </footer>
+               
+    <!--SCRIPT-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script>
+
+      function comprobacionesSend(){
+
+        var index = document.getElementById("selectorVote");
+        var vote;
+
+          if(index.value == 0){
+
+            document.getElementById("botonSend").style.visibility = 'hidden';
+            document.getElementById("botonClose").style.visibility = 'visible';
+
+            document.getElementById("labelEmail").style.visibility = 'hidden';
+            document.getElementById("emailVote").style.visibility = 'hidden';
+
+            document.getElementById("pSelect").style.visibility = 'visible';
+
+          }else{ 
+
+            document.getElementById("botonSend").style.visibility = 'visible';
+            document.getElementById("botonClose").style.visibility = 'hidden';
+
+            document.getElementById("labelEmail").style.visibility = 'visible';
+            document.getElementById("emailVote").style.visibility = 'visible';
+
+            document.getElementById("pSelect").style.visibility = 'hidden';
+
+            document.getElementById("emailVote").value = "";
+
+            if(index.value == 1){
+              vote="Luka Doncic";
+            }else if(index.value == 2){
+              vote="Lebron James";
+            }else if(index.value == 3){
+              vote="Kawhi Leonard";
+            }else if(index.value == 4){
+              vote="Giannis Antetokoumpo";
+            }if(index.value == 5){
+              vote="Damian Lillard";
+            }
+
+           }
+      }
+
+      const email = document.getElementById("emailVote");
+
+      email.addEventListener("keyup",function(){
+          if(email.value == ""){
+            debugger
+            document.getElementById("emailVote").style.background = "white";
+          }
+      })
+
+      function restauracion(){
+
+        re=/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+        var email = document.getElementById("emailVote").value;
+        if(re.exec(email)){
+          
+          document.getElementById("emailVote").value = "";
+          document.getElementById("emailVote").style.background = "white";
+
+        }else{
+
+          document.getElementById("emailVote").value = "WRONG EMAIL";
+          document.getElementById("emailVote").style.background = "red";
+
+          
+        }
+
+
+      }
+
+      function emailVote(){        
+
+      }
+
+    
+    </script>
+
+<script>
+      const searchBut = document.getElementById("searchBut");
+      var busqueda = document.getElementById("searchInput");
+
+      var players = {};
+      
+      searchBut.addEventListener("click",function(event){
+        document.getElementById("ppal").style.visibility = 'hidden';
+        document.getElementById("textAbovePpal").innerHTML = "SEARCH";
+        event.preventDefault();
+        fetch("https://www.balldontlie.io/api/v1/players?search="+busqueda.value,
+        {
+          method: 'GET',
+          headers:{
+            'Content-Type': 'application/json',
+            'Accept': 'applicatio/json',
+          }
+        })
+      
+      .then(res =>{
+        if(res.ok){
+          return res.json();
+        }else
+        throw res;
+      })
+
+      .then(r=>{
+        players = r;
+        debugger
+        showPlayers(players.data);
+      })
+
+      .catch(e=> console.log(e));
+      })
+
+      function showPlayers(players){
+
+        document.getElementById("searchDiv").innerHTML ="";
+
+        for(var i = 0;i<players.length;i++){
+
+          const div = document.createElement("div");
+          const div1 = document.createElement("div");
+          const div2 = document.createElement("div");
+          const div3 = document.createElement("div");
+          const p1 = document.createElement("p");
+          const p2 = document.createElement("p");
+          debugger
+
+          p1.textContent = "PLAYER : " + players[i].first_name.toUpperCase() + " " + players[i].last_name.toUpperCase();
+          p2.textContent = "TEAM : " + players[i].team.full_name.toUpperCase();
+          debugger
+          div1.appendChild(p1);
+          div2.appendChild(p2);
+          div3.appendChild(div1);
+          div3.appendChild(div2);
+          div3.style.padding = "20px 20px 20px 20px";
+          div.appendChild(div3);
+          div.style.border = "thick solid #000000";
+          debugger
+
+          document.getElementById("searchDiv").appendChild(div);
+          debugger
+        }
+
+        if(players.length == 0){
+          const div = document.createElement("div");
+          const p1 = document.createElement("p");
+          p1.textContent = "NO MATCH FOUND";
+          p1.style.fontSize = "x-large";
+          div.appendChild(p1);
+          document.getElementById("searchDiv").appendChild(div);
+        }
+        
+        debugger
+      }
+
+    </script>
+
+    
+  </body>
+
+</html>

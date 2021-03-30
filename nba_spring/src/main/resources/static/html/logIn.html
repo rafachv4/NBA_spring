@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <title>MVP NBA21</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    </head>
+
+    <body>
+
+      <!--NAVIGATION BAR-->
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid d-flex justify-content-center">
+            <a class="navbar-brand" href="#"><img src="imagenes/nba.jpg" class="img-fluid" width="100px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExample03"> <!--Cuando se colapse el navbar esto ira dentro-->
+                <ul class="navbar-nav me-auto my-2">
+                  <li class="nav-item active">
+                    <a class="nav-link" aria-current="page" href="principal.html" >Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://www.basketball-reference.com/" target="_blank">References</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://www.nba.com/standings" target="_blank">Standings</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Teams</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown03">
+                      <li><a class="dropdown-item" href="https://www.nba.com/teams" target="_blank">Eastern Conference</a></li>
+                      <li><a class="dropdown-item" href="https://www.nba.com/teams" target="_blank">Western Conference</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="shop.html">Shop</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="aboutUs.html">About Us</a>
+                  </li>
+                </ul>
+                
+                <div class="d-flex">
+                  <form class="container-fluid d-flex justify-content-end" id="submitLogin">
+                    <div class="container-fluid align-items-center">
+                      <a href="logIn.html"><button" class="btn btn-danger my-2" data-bs-toggle="modal" data-bs-target="#loginmodal" style="min-width: 100px;">LOG IN</button></a>
+
+                    </div>
+                  </form>
+                  <form class="container-fluid d-flex justify-content-center" id="submitSignUp">
+                    <div class="container-fluid align-items-center">
+                      <a href="signUp.html"><button type="button" class="btn btn-danger my-2" data-bs-toggle="modal" data-bs-target="#signupmodal" style="min-width: 100px;">SIGN UP</button></a>
+                    </div>
+                  </form>
+                  <form class="d-flex align-items-center justify-content-center">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="min-width: 3cm; max-height: 1cm;" id="searchInput">
+                    <button class="btn btn-outline-success" id="searchBut" type="submit">Search</button>
+                  </form>
+              </div>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!--MAIN-->
+
+    <main>
+
+      <div class="container-fluid bg-secondary">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 my-3">
+                    <p class="h1 text-center" id="textAbovePpal">
+                        LOG IN                    
+                      </p>
+                </div>
+            </div>
+          </div>
+
+          <div class="container-fluid" id="searchDiv">
+            
+        </div>
+
+        <div class="row" id ="ppal">
+
+        <div class="container-fluid d-flex flex-column bg-secondary">
+          <div>          
+            <div class="input-group mb-3">
+              <input type="email" class="form-control" placeholder="Email" aria-label="Recipient's username" aria-describedby="basic-addon2" id="email">
+            </div>
+            <div class="input-group mb-3">
+              <input type="password" class="form-control" aria-describedby="basic-addon3" placeholder="password" id="password">
+            </div>
+            <div class="container-fluid my-3">
+              <button class="btn btn-danger my-2" id="loginSub" type="button">LOG IN</button>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+        
+    </main>
+               
+    <!--SCRIPT-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    
+    <script>
+
+      var submit = document.getElementById("loginSub");
+
+      submit.addEventListener("click",function(){
+
+        var logeado = {};
+        let emailLog = document.getElementById("email").value;
+        let passwordLog = document.getElementById("password").value;
+
+        logeado = {
+          email:emailLog,
+          password:passwordLog
+        };
+
+        window.alert("login creandolo" + logeado.email + logeado.password);
+
+        fetch("http://localhost:8080/myapplication/api/login",
+        {
+          method: 'POST',
+          headers:{
+            'Content-Type': 'application/json',
+            'Accept': 'applicatio/json',
+          },
+          body: JSON.stringify(logeado)
+        })
+        .then(res =>{
+          if(res.ok){
+            window.alert("OK");
+            console.log(res.json())
+            return res.json();
+          }else{
+            throw res;
+          }
+        
+      })
+
+      .then(r=>{
+        console.log(r.JSON);
+        var string = r;
+        window.alert(r);
+        window.location.replace("http://localhost:8080/myapplication/html/principal.html");
+
+      })
+
+      .catch(e=>{
+        console.log(e);
+      })
+
+    })
+
+    </script>
+
+<script>
+  const searchBut = document.getElementById("searchBut");
+  var busqueda = document.getElementById("searchInput");
+
+  var players = {};
+  
+  searchBut.addEventListener("click",function(event){
+    document.getElementById("ppal").style.visibility = 'hidden';
+    document.getElementById("textAbovePpal").innerHTML = "SEARCH";
+    event.preventDefault();
+    fetch("https://www.balldontlie.io/api/v1/players?search="+busqueda.value,
+    {
+      method: 'GET',
+      headers:{
+        'Content-Type': 'application/json',
+        'Accept': 'applicatio/json',
+      }
+    })
+  
+  .then(res =>{
+    if(res.ok){
+      return res.json();
+    }else
+    throw res;
+  })
+
+  .then(r=>{
+    players = r;
+    debugger
+    showPlayers(players.data);
+  })
+
+  .catch(e=> console.log(e));
+  })
+
+  function showPlayers(players){
+
+    document.getElementById("searchDiv").innerHTML ="";
+
+    for(var i = 0;i<players.length;i++){
+
+      const div = document.createElement("div");
+      const div1 = document.createElement("div");
+      const div2 = document.createElement("div");
+      const div3 = document.createElement("div");
+      const p1 = document.createElement("p");
+      const p2 = document.createElement("p");
+      debugger
+
+      p1.textContent = "PLAYER : " + players[i].first_name.toUpperCase() + " " + players[i].last_name.toUpperCase();
+      p2.textContent = "TEAM : " + players[i].team.full_name.toUpperCase();
+      debugger
+      div1.appendChild(p1);
+      div2.appendChild(p2);
+      div3.appendChild(div1);
+      div3.appendChild(div2);
+      div3.style.padding = "20px 20px 20px 20px";
+      div.appendChild(div3);
+      div.style.border = "thick solid #000000";
+      debugger
+
+      document.getElementById("searchDiv").appendChild(div);
+      debugger
+    }
+
+    if(players.length == 0){
+      const div = document.createElement("div");
+      const p1 = document.createElement("p");
+      p1.textContent = "NO MATCH FOUND";
+      p1.style.fontSize = "x-large";
+      div.appendChild(p1);
+      document.getElementById("searchDiv").appendChild(div);
+    }
+    
+    debugger
+  }
+
+</script>
+
+  </body>
+
+</html>
