@@ -134,7 +134,7 @@
                 password:passwordSign
             };
 
-            window.alert("signup creandolo");
+            window.alert("Signing user");
 
             fetch("http://localhost:8080/myapplication/api/signUp",
             {
@@ -147,19 +147,19 @@
             })
             .then(res =>{
             if(res.ok){
-              window.alert("Ok");
-            }else
-            throw res;
-        })
+              return res;
+            }else{
+             throw res;
+            }
+          })
 
-        .then(r=>{
-            window.alert("Usuraio signeado");
-            window.location.replace("http://localhost:8080/myapplication/html/principal.html");
-        })
+          .then(r=>{
+              window.location.replace("http://localhost:8080/myapplication/html/principal.html");
+          })
 
-        .catch(e=>{
-            console.log(e);
-        })
+          .catch(e=>{
+              console.log(e);
+          })
 
     }else{
         window.alert("Passwords not equals");
