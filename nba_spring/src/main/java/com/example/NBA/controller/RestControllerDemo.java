@@ -29,7 +29,7 @@ public class RestControllerDemo {
 	private UserService userService;
 	
 	@PostMapping("/login")
-	public ResponseEntity<String> logIn(@RequestBody UserLogIn user) {
+	public ResponseEntity<Object> logIn(@RequestBody UserLogIn user) {
 		
 		log.info(user.getEmail() + user.getPassword());
 		
@@ -44,7 +44,7 @@ public class RestControllerDemo {
 	}
 	
 	@PostMapping("/signUp")
-	public ResponseEntity<String> signUp(@RequestBody UserLogIn user) {
+	public ResponseEntity<Object> signUp(@RequestBody UserLogIn user) {
 		
 		log.info(user.getEmail() + user.getPassword());
 		
